@@ -1,0 +1,27 @@
+<resources>
+
+    <string name="app_name">JobWork</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+
+	<!-- 파트별 메인화면 -->	
+    <string name="title_activity_job_main">JobMainActivity</string>
+    <string name="title_activity_job_info">JobInfoActivity</string>
+    <string name="title_activity_aptitude">ApitudeActivity</string>
+    <string name="title_activity_interview">InterviewActivity</string>
+    <string name="title_activity_advice">AdviceActivity</string>
+    
+    <!-- 진로코칭 메인화면 -->	
+    <string name="tx_main_intro">청소년을 위한 진로 코칭</string>
+    <string name="bt_01">직업정보</string>
+    <string name="bt_02">적성검사</string>
+    <string name="bt_03">인 터 뷰</string>
+    <string name="bt_04">추천정보</string>
+    <string name="tx_01">서슬기님 작품</string>
+    <string name="tx_02">소태균님 작품</string>
+    <string name="tx_03">하민호님 작품</string>
+    <string name="tx_04">이상호님 작품</string>
+    <string name="tx_main_director">★ 총감독 : 이영기 차장님</string>
+    
+        
+</resources>
