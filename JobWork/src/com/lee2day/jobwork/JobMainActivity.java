@@ -36,7 +36,7 @@ public class JobMainActivity extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				Intent intent = new Intent(JobMainActivity.this, AptitudeActivity.class);
+				Intent intent = new Intent(JobMainActivity.this, AptitudeTestActivity.class);
 				startActivity(intent);
 			}
 		});

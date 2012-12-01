@@ -25,9 +25,13 @@
             android:label="@string/title_activity_job_info" >
         </activity>
         <activity
-            android:name=".AptitudeActivity"
+            android:name=".AptitudeTestActivity"
             android:label="@string/title_activity_aptitude" >
         </activity>
+		<activity
+            android:name=".AptitudeRsltActivity"
+            android:label="@string/title_activity_aptitude" >
+        </activity>        
         <activity
             android:name=".InterviewActivity"
             android:label="@string/title_activity_interview" >

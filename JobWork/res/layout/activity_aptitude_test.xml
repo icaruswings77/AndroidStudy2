@@ -1,0 +1,182 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+        <TableLayout
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content" >
+        	
+        	<TableRow>
+        	  	<Button
+            		android:id="@+id/bt_go_main"
+            		android:layout_width="fill_parent"
+            		android:layout_height="14pt"
+            		android:textSize="5pt"
+            		android:text="메인화면" />
+        	  	
+        		<TextView
+            		android:layout_width="match_parent"
+            		android:layout_height="15dp"
+            		android:text="                                                     "
+            		/>              	  	
+
+        		<Button
+            		android:id="@+id/bt_go_new"
+            		android:layout_width="fill_parent"
+            		android:layout_height="14pt"
+            		android:textSize="5pt"
+        			android:text="처음으로" />
+        	</TableRow>	    
+        
+        </TableLayout>   
+                
+        <ImageView
+            android:id="@+id/jobwork_main"
+            android:layout_width="320dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="6dip"
+            android:src="@drawable/jobwork_main" />
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="R 유형"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+        <TextView
+            android:id="@+id/tv_field_qes"
+            android:layout_width="fill_parent"
+            android:layout_height="110dp"
+            android:background="#ffffcc"
+            android:textColor="#007700"
+            android:textSize="12pt"
+            android:textStyle="italic"
+            android:typeface="serif"            
+            android:text="다음 질문은 진로 흥미를 알아보는 것"         
+            />
+        
+		<TextView
+        	android:layout_width="match_parent"
+        	android:layout_height="14dp"
+        	android:textSize="5pt"
+        	android:text="          "/>	   
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="※ 위 분야에 대해 어느 정도 좋아하고 흥미로운지 "
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:text="    하단의 버튼을 선택하여 주세요."
+            />
+        
+                                                    
+        <TableLayout
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content" >
+        
+        	<TableRow>
+				<TextView
+            		android:layout_width="match_parent"
+            		android:layout_height="14dp"
+            		android:textSize="5pt"
+            		android:text="☞ 1번 : 전혀 그렇지 않다."
+            		/>
+				
+				<TextView
+            		android:layout_width="match_parent"
+            		android:layout_height="14dp"
+            		android:textSize="5pt"
+            		android:text="          "
+            		/>
+
+        		<TextView
+            		android:layout_width="match_parent"
+            		android:layout_height="14dp"
+            		android:textSize="5pt"
+            		android:text="☞ 2번 : 별로 그렇지 않다."
+            		/>  
+        	</TableRow>
+        	<TableRow>
+				<TextView
+            		android:layout_width="match_parent"
+            		android:layout_height="14dp"
+            		android:textSize="5pt"
+            		android:text="☞ 3번 : 약간 그렇다."
+            		/>
+				<TextView
+            		android:layout_width="match_parent"
+            		android:layout_height="14dp"
+            		android:textSize="5pt"
+            		android:text="          "
+            		/>				
+        		<TextView
+            		android:layout_width="match_parent"
+            		android:layout_height="14dp"
+            		android:textSize="5pt"
+            		android:text="☞ 4번 : 매우 그렇다."
+            		/>  
+        	</TableRow>
+        </TableLayout>	
+        
+        <TableLayout
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content" >
+        
+        	<TableRow>
+        		<Button
+            		android:id="@+id/bt_check01"
+            		android:layout_width="fill_parent"
+            		android:layout_height="wrap_content"
+            		android:text="1번" />
+				<TextView
+            		android:layout_width="match_parent"
+            		android:layout_height="14dp"
+            		android:textSize="5pt"
+            		android:text="        "
+            		/>	        		
+        		<Button
+            		android:id="@+id/bt_check02"
+            		android:layout_width="fill_parent"
+            		android:layout_height="wrap_content"
+        			android:text="2번" />
+        		<TextView
+            		android:layout_width="match_parent"
+            		android:layout_height="14dp"
+            		android:textSize="5pt"
+            		android:text="        "
+            		/>	   
+        		<Button
+            		android:id="@+id/bt_check03"
+            		android:layout_width="fill_parent"
+            		android:layout_height="wrap_content"
+            		android:text="3번" />
+        		<TextView
+            		android:layout_width="match_parent"
+            		android:layout_height="14dp"
+            		android:textSize="5pt"
+            		android:text="        "
+            		/>	   
+        		<Button
+            		android:id="@+id/bt_check04"
+            		android:layout_width="fill_parent"
+            		android:layout_height="wrap_content"
+        			android:text="4번" />
+        	</TableRow>
+
+        </TableLayout>	
+
+    </LinearLayout>    
+</RelativeLayout>
