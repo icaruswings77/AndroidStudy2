@@ -33,7 +33,11 @@ public final class R {
         public static final int button03=0x7f07001f;
         public static final int button04=0x7f070020;
         public static final int jobwork_main=0x7f070000;
-        public static final int menu_settings=0x7f070022;
+        public static final int list_title=0x7f070025;
+        public static final int menu_settings=0x7f070026;
+        public static final int srch_lcls=0x7f070023;
+        public static final int srch_mcls=0x7f070024;
+        public static final int srch_title=0x7f070022;
         public static final int textView1=0x7f07001c;
         public static final int textView2=0x7f070021;
         public static final int tv_field_qes=0x7f070017;
@@ -57,8 +61,9 @@ public final class R {
         public static final int activity_aptitude_rslt=0x7f030001;
         public static final int activity_aptitude_test=0x7f030002;
         public static final int activity_interview=0x7f030003;
-        public static final int activity_job_info=0x7f030004;
-        public static final int activity_job_main=0x7f030005;
+        public static final int activity_job_main=0x7f030004;
+        public static final int activity_jobinfo_rslt=0x7f030005;
+        public static final int activity_jobinfo_srch=0x7f030006;
     }
     public static final class menu {
         public static final int activity_advice=0x7f060000;

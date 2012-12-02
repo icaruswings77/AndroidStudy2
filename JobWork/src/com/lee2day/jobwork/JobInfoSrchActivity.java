@@ -4,12 +4,12 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 
-public class JobInfoActivity extends Activity {
+public class JobInfoSrchActivity extends Activity {
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_job_info);
+        setContentView(R.layout.activity_jobinfo_srch);
     }
     
 

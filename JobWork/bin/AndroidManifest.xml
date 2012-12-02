@@ -21,7 +21,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".JobInfoActivity"
+            android:name=".JobInfoSrchActivity"
+            android:label="@string/title_activity_job_info" >
+        </activity>
+        <activity
+            android:name=".JobInfoRsltActivity"
             android:label="@string/title_activity_job_info" >
         </activity>
         <activity

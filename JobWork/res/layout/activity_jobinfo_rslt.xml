@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+        <TableLayout
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content" >
+        	
+        	<TableRow>
+        	  	<Button
+            		android:id="@+id/bt_go_main"
+            		android:layout_width="fill_parent"
+            		android:layout_height="14pt"
+            		android:textSize="5pt"
+            		android:text="메인화면" />
+        	  	
+        		<TextView
+            		android:layout_width="match_parent"
+            		android:layout_height="15dp"
+            		android:text="                                                     "
+            		/>              	  	
+
+        		<Button
+            		android:id="@+id/bt_go_new"
+            		android:layout_width="fill_parent"
+            		android:layout_height="14pt"
+            		android:textSize="5pt"
+        			android:text="처음으로" />
+        	</TableRow>	    
+        
+        </TableLayout>  
+                
+        <ImageView
+            android:id="@+id/jobwork_main"
+            android:layout_width="320dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="6dip"
+            android:src="@drawable/jobwork_main" />
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="직업설명"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+        <TableLayout
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content" >
+        
+        	<TableRow>
+        		<Button
+            		android:id="@+id/bt_01"
+            		android:layout_width="fill_parent"
+            		android:layout_height="14pt"
+            		android:textSize="5pt"
+            		android:text="하는일" 
+            		/>   
+            	<Button
+            		android:id="@+id/bt_02"
+            		android:layout_width="fill_parent"
+            		android:layout_height="14pt"
+            		android:textSize="5pt"
+            		android:text="되는길" 
+            		/>   
+        		<Button
+            		android:id="@+id/bt_03"
+            		android:layout_width="fill_parent"
+            		android:layout_height="14pt"
+            		android:textSize="5pt"
+            		android:text="직업전망" 
+            		/>            		
+        	</TableRow>
+
+        </TableLayout>	
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            
+        	<TextView
+	            android:id="@+id/tx_expl"
+            	android:layout_width="match_parent"
+            	android:layout_height="wrap_content"
+            	android:textSize="5pt"
+            	android:text="설명"
+            	/>
+        </ScrollView>
+    </LinearLayout>    
+</RelativeLayout>
