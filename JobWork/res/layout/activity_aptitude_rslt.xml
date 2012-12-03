@@ -38,14 +38,14 @@
             		/>
 
         		<TextView
-        		    android:id="@+id/tx_line01"
+        		    android:id="@+id/tv_line01"
             		android:layout_width="match_parent"
             		android:layout_height="14dp"
             		android:textSize="5pt"
             		android:text="-"
             		/>
         		<TextView
-        		    android:id="@+id/tx_score_01"
+        		    android:id="@+id/tv_score_01"
             		android:layout_width="match_parent"
             		android:layout_height="14dp"
             		android:textSize="5pt"
@@ -68,14 +68,14 @@
             		/>
 
         		<TextView
-        		    android:id="@+id/tx_line02"
+        		    android:id="@+id/tv_line02"
             		android:layout_width="match_parent"
             		android:layout_height="14dp"
             		android:textSize="5pt"
             		android:text="----------."
             		/>  
 				<TextView
-        		    android:id="@+id/tx_score_02"
+        		    android:id="@+id/tv_score_02"
             		android:layout_width="match_parent"
             		android:layout_height="14dp"
             		android:textSize="5pt"
@@ -98,14 +98,14 @@
             		/>
 
         		<TextView
-        		    android:id="@+id/tx_line03"
+        		    android:id="@+id/tv_line03"
             		android:layout_width="match_parent"
             		android:layout_height="14dp"
             		android:textSize="5pt"
             		android:text="----------."
             		/>  
 				<TextView
-        		    android:id="@+id/tx_score_03"
+        		    android:id="@+id/tv_score_03"
             		android:layout_width="match_parent"
             		android:layout_height="14dp"
             		android:textSize="5pt"
@@ -128,14 +128,14 @@
             		/>
 
         		<TextView
-        		    android:id="@+id/tx_line04"
+        		    android:id="@+id/tv_line04"
             		android:layout_width="match_parent"
             		android:layout_height="14dp"
             		android:textSize="5pt"
             		android:text="----------."
             		/>  
 				<TextView
-        		    android:id="@+id/tx_score_04"
+        		    android:id="@+id/tv_score_04"
             		android:layout_width="match_parent"
             		android:layout_height="14dp"
             		android:textSize="5pt"
@@ -158,14 +158,14 @@
             		/>
 
         		<TextView
-        		    android:id="@+id/tx_line05"
+        		    android:id="@+id/tv_line05"
             		android:layout_width="match_parent"
             		android:layout_height="14dp"
             		android:textSize="5pt"
             		android:text="----------."
             		/>  
 				<TextView
-        		    android:id="@+id/tx_score_05"
+        		    android:id="@+id/tv_score_05"
             		android:layout_width="match_parent"
             		android:layout_height="14dp"
             		android:textSize="5pt"
@@ -188,14 +188,14 @@
             		/>
 
         		<TextView
-        		    android:id="@+id/tx_line06"
+        		    android:id="@+id/tv_line06"
             		android:layout_width="match_parent"
             		android:layout_height="14dp"
             		android:textSize="5pt"
             		android:text="----------."
             		/>  
 				<TextView
-        		    android:id="@+id/tx_score_06"
+        		    android:id="@+id/tv_score_06"
             		android:layout_width="match_parent"
             		android:layout_height="14dp"
             		android:textSize="5pt"

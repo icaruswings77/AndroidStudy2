@@ -28,6 +28,47 @@
         <TableLayout
         	android:layout_width="fill_parent"
         	android:layout_height="wrap_content" >
+        	<TableRow>		
+
+				<Button
+					android:id="@+id/insert"  
+					android:layout_width="wrap_content" 
+					android:layout_height="14pt"
+            		android:textSize="5pt"
+    				android:onClick="mOnClick"
+					android:text="Insert"
+					/>
+				<Button
+					android:id="@+id/delete"  
+					android:layout_width="wrap_content" 
+					android:layout_height="14pt"
+            		android:textSize="5pt"
+    				android:onClick="mOnClick"
+					android:text="Delete"
+					/>
+				<Button
+					android:id="@+id/update"  
+					android:layout_width="wrap_content" 
+					android:layout_height="14pt"
+            		android:textSize="5pt"
+    				android:onClick="mOnClick"
+					android:text="Update"
+					/>
+				<Button
+					android:id="@+id/select"  
+					android:layout_width="wrap_content" 
+					android:layout_height="14pt"
+            		android:textSize="5pt"
+    				android:onClick="mOnClick"
+					android:text="Select"
+					/>
+
+        	</TableRow>
+        </TableLayout>    
+        
+        <TableLayout
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content" >
         
         	<TableRow>
 				<TextView
@@ -96,8 +137,8 @@
         	</TableRow>        	
         		
 
-        </TableLayout>	
-        
+        </TableLayout>
+ 
         
         <TextView
             android:layout_width="match_parent"
