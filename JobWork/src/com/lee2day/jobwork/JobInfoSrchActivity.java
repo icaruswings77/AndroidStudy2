@@ -7,6 +7,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+//import com.lee2day.jobwork.DBAdapter.DatabaseHelper;
+
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
@@ -22,15 +24,21 @@ import android.view.View;
 import android.widget.EditText;
 
 public class JobInfoSrchActivity extends Activity {
-	JusoDBHelper mHelper;
+	//private DBAccess m_DBAccess = null;
+	private DBAdapter m_DBAdapter = null;
+	JobDBHelper mHelper;
+	//private DatabaseHelper DBHelper;
 	EditText mText;	
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jobinfo_srch);
-		mHelper = new JusoDBHelper(this);
+		//mHelper = new JobDBHelper(this);
 		mText = (EditText) findViewById(R.id.srch_title);
+		DBAdapter mHelper = new DBAdapter(null);
+		mHelper.openDataBase();
+		
     }
     
 
@@ -74,7 +82,7 @@ public class JobInfoSrchActivity extends Activity {
 			db = mHelper.getReadableDatabase();
 			Cursor cursor;
 
-			cursor = db.rawQuery("SELECT job_cd, job_nm FROM jobwork", null);
+			cursor = db.rawQuery("SELECT job_cd, job_nm, info_work FROM jobwork_db", null);
 
 			String Result = "";
 			while (cursor.moveToNext()) {
@@ -139,15 +147,19 @@ public class JobInfoSrchActivity extends Activity {
 }
 
 
-class JusoDBHelper extends SQLiteOpenHelper {
-	public JusoDBHelper(Context context) {
+
+
+
+
+class JobDBHelper extends SQLiteOpenHelper {
+	public JobDBHelper(Context context) {
 		super(context, "jobwork.db", null, 1);
 	}
 
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL("CREATE TABLE jobwork ( _id INTEGER PRIMARY KEY AUTOINCREMENT, "
-		        + "job_cd TEXT, job_nm TEXT, large_class TEXT, large_nm TEXT, middle_class TEXT, middle_name TEXT, " 
-		        + "info_work TEXT, info_meth TEXT, info_view TEXT);");
+		        + "job_cd TEXT, job_nm TEXT, large_class TEXT, large_nm TEXT, middle_class TEXT, middle_nm TEXT, " 
+		        + "info_work VARCHAR, info_meth VARCHAR, info_view VARCHAR);");
 	}
 
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

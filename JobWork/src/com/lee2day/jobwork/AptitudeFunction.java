@@ -1,6 +1,6 @@
 package com.lee2day.jobwork;
 
-public class AptitudeFuntion {
+public class AptitudeFunction {
 	// 유형별 상세 설명
 	public static String r_type_spcl = "★★★ 실재형 (Realistic) ★★★\n"
 			+ "○ 장난감이나 가구를 가지고 놀기를 좋아한다. \n" + "○ 무뚝뚝하고 말이 적은 편이다. \n"
@@ -49,7 +49,7 @@ public class AptitudeFuntion {
 
 	public String[] fieldQeustion;
 	
-	public AptitudeFuntion() {	
+	public AptitudeFunction() {	
 		
 		fieldQeustion = new String[39];
 

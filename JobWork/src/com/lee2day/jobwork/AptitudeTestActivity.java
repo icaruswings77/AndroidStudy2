@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class AptitudeTestActivity extends Activity {
 	
-	private AptitudeFuntion m_AptitudeFuntion = null;
+	private AptitudeFunction m_AptitudeFuntion = null;
 	
 	// private Button button;
 	private Button button1;
@@ -42,7 +42,7 @@ public class AptitudeTestActivity extends Activity {
         setContentView(R.layout.activity_aptitude_test);
         
         // AptitudeFuntion 객체 생성
-        m_AptitudeFuntion = new AptitudeFuntion();
+        m_AptitudeFuntion = new AptitudeFunction();
                 
         tvField = (TextView) findViewById(R.id.tv_field_qes);
         tvField.setText(m_AptitudeFuntion.fieldQeustion[0]);

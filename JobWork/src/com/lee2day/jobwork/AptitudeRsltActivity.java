@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class AptitudeRsltActivity extends Activity {
 	
-	private AptitudeFuntion m_AptitudeFuntion = null;
+	private AptitudeFunction m_AptitudeFuntion = null;
 	
 	// TextView
 	TextView txRslt;  			//TextView 유형 안내
@@ -38,7 +38,7 @@ public class AptitudeRsltActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aptitude_rslt);
         
-        m_AptitudeFuntion = new AptitudeFuntion();
+        m_AptitudeFuntion = new AptitudeFunction();
         
         // 액티비티로부터 결과 받기
         Intent intent = getIntent();
