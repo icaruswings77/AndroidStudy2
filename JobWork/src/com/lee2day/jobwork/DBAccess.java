@@ -26,7 +26,7 @@ import android.util.Log;
 
 public class DBAccess extends SQLiteOpenHelper{
     private static String DB_PATH = " /data/data/com.lee2day.jobwork/databases/";
-    private static String DB_NAME = "jobwork_db.sqlite";
+    private static String DB_NAME = "jobwork.db";
     public SQLiteDatabase myDataBase;
     private final Context myContext;
 

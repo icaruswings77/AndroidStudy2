@@ -1,94 +1,107 @@
 package com.lee2day.jobwork;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
-//import com.lee2day.jobwork.DBAdapter.DatabaseHelper;
+import android.app.*;
+import android.content.*;
+import android.content.res.*;
+import android.database.*;
+import android.database.sqlite.*;
+import android.os.*;
+import android.util.*;
+import android.view.*;
+import android.widget.*;
+// 엑셀변환
+//http://www.reigndesign.com/blog/using-your-own-sqlite-database-in-android-applications/
+//Function 초성(S$)
+//Application.Volatile True
+//Const 초성값 = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ"
+//Dim TxT$, i, k
+//For i = 1 To Len(S)
+//    TxT = Mid$(S, i, 1)
+//    If InStr(초성값, TxT) Then
+//       초성 = 초성 & TxT
+//    Else
+//        k = AscW(TxT)
+//        If k >= &HAC00 And k <= &HD7A3 Then 초성 = 초성 & Mid(초성값, Int((k - &HAC00) / 588) + 1, 1)
+//    End If
+//Next i
+//초성 = IIf(초성 = 0, "", 초성)
+//End Function
 
-import android.app.Activity;
-import android.content.ContentValues;
-import android.content.Context;
-import android.content.res.AssetManager;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.os.Bundle;
-import android.provider.SyncStateContract.Constants;
-import android.util.Log;
-import android.view.Menu;
-import android.view.View;
-import android.widget.EditText;
 
 public class JobInfoSrchActivity extends Activity {
-	//private DBAccess m_DBAccess = null;
+
+	//JusoDBHelper mHelper;
 	private DBAdapter m_DBAdapter = null;
-	JobDBHelper mHelper;
-	//private DatabaseHelper DBHelper;
+	SQLiteDatabase db;
 	EditText mText;	
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jobinfo_srch);
-		//mHelper = new JobDBHelper(this);
-		mText = (EditText) findViewById(R.id.srch_title);
-		DBAdapter mHelper = new DBAdapter(null);
-		mHelper.openDataBase();
 		
+		DBAdapter m_DBAdapter = new DBAdapter(this);	
+		
+		
+		//SQLiteDatabase.openDatabase("/data/data/com.lee2day.jobwork/databases/job.db", null,
+		//		SQLiteDatabase.NO_LOCALIZED_COLLATORS);		
+		db = m_DBAdapter.getReadableDatabase();
+		ContentValues row;
+		
+       // mHelper = new JusoDBHelper(this);
+		//mText = (EditText) findViewById(R.id.srch_title);
+
     }
     
 
 	public void mOnClick(View v) {
-		SQLiteDatabase db;
-		ContentValues row;
+
+		
 		switch (v.getId()) {
-		case R.id.insert:
-			db = mHelper.getWritableDatabase();
-			// insert 
-			row = new ContentValues();
-			row.put("job_cd", "0101001");
-			row.put("job_nm", "경영자");
-			db.insert("jobwork", null, row);
-			// SQL 바로 투입
-			//db.execSQL("INSERT INTO jobwork VALUES (null, '0101002', '방송인');");
-			mHelper.close();
-			mText.setText("Insert Success");
-			break;
-		case R.id.delete:
-			db = mHelper.getWritableDatabase();
-			// delete
-			//db.delete("jobwork", null, null);
-			// SQL 
-			db.execSQL("DELETE FROM jobwork;");
-			mHelper.close();
-			mText.setText("Delete Success");
-			break;
+//		case R.id.insert:
+//			//db = mHelper.getWritableDatabase();
+//			// insert �޼���� ����
+//			row = new ContentValues();
+//			row.put("iname", "���±�");
+//			row.put("telno", "01012345678");
+//			db.insert("smsjuso", null, row);
+//			// SQL ������� ����
+//			db.execSQL("INSERT INTO smsjuso VALUES (null, '�Կ��', '01088887777');");
+//			//mHelper.close();
+//			mText.setText("Insert Success");
+//			break;
+//		case R.id.delete:
+//			//db = mHelper.getWritableDatabase();
+//			// delete �޼���� ����
+//			db.delete("smsjuso", null, null);
+//			// SQL ������� ����
+//			// db.execSQL("DELETE FROM smsjuso;");
+//			//mHelper.close();
+//			mText.setText("Delete Success");
+//			break;
 		case R.id.update:
-			db = mHelper.getWritableDatabase();
-			// update
-			//row = new ContentValues();
-			//row.put("0101001", "청소부");
-			 //db.update("jobwork", row, "job_cd = '0101001'", null);
-			// SQL 
-			db.execSQL("UPDATE jobwork SET job_nm = '청소부' WHERE job_cd = '0101001' ;");
-			mHelper.close();
-			mText.setText("Update Success");
+//			//db = mHelper.getWritableDatabase();
+//			// update �޼���� ����
+//			row = new ContentValues();
+//			row.put("���±�", "01012345678");
+//			// db.update("smsjuso", row, "iname = '������'", null);
+//			// SQL ������� ����
+//			//db.execSQL("UPDATE smsjuso SET iname = '�̿���' WHERE telno = '01088887777';");
+//			////mHelper.close();
+//			mText.setText("Update Success");
 			break;
 		case R.id.select:
-			db = mHelper.getReadableDatabase();
-			Cursor cursor;
 
-			cursor = db.rawQuery("SELECT job_cd, job_nm, info_work FROM jobwork_db", null);
+			Cursor cursor;
+			cursor = db.rawQuery("SELECT job_cd, job_nm FROM jobwork", null);
 
 			String Result = "";
 			while (cursor.moveToNext()) {
-				String job_cd = cursor.getString(0);
+				String joc_cd = cursor.getString(0);
 				String job_nm = cursor.getString(1);
-				Result += (job_cd + " = " + job_nm + "\n");
+				Result += (joc_cd + " = " + job_nm + "\n");
 			}
 
 			if (Result.length() == 0) {
@@ -97,74 +110,162 @@ public class JobInfoSrchActivity extends Activity {
 				mText.setText(Result);
 			}
 			cursor.close();
-			mHelper.close();
+			m_DBAdapter.close();
 			break;
 		}
 	}
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_job_info, menu);
         return true;
     }
-    
-    // 미리 생성된 .db 파일을 안드로이드 프로젝트의 assets에 위치
-    // 어플에서 사용하는 SQLite의 db 파일이 생성되는 기본 경로
-    // /data/data/[PACKAGE_NAME]/databases/[DB_FILE_NAME] 
-    /*
-	private void copySQLiteDB(Context context) {
-		AssetManager manager = context.getAssets();
-		String filePath = "/data/data/" + com.lee2day.jobwork
-				+ "/databases/" + jobwork.db;
-		File file = new File(filePath);
+	
+}
+class JusoDBHelper extends SQLiteOpenHelper {
+	private static final Activity JobInfoSrchActivity = null;
+	private SQLiteDatabase sqlite;
+	private static String DB_PATH = "/data/data/com.lee2day.jobwork/databases/";
+	//private static String DB_PATH = "/data/data/com/lee2day/jobwork/databases/";
+	private static String DB_NAME = "smsjuso.db";
+	private final Context crContext;
+	
+	public JusoDBHelper(Context context) {
+		super(context, DB_NAME, null, 1);
+		this.crContext = context;
+	}
+
+	public void onCreate(SQLiteDatabase db) {
+		//db.execSQL("CREATE TABLE smsjuso ( _id INTEGER PRIMARY KEY AUTOINCREMENT, " + "iname TEXT, telno TEXT);");
+		this.getReadableDatabase();
+		//this.getWritableDatabase();
+		//getWritableDatabase
+		try {
+			//copyDatabase();
+			//InitDataBase();
+			//copydb(JobInfoSrchActivity);
+			copyDatabase();
+			openDataBase();
+			
+		} catch (IOException e) {
+			throw new Error("Error copying database");
+		}
+
+	}
+
+	
+	
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		//db.execSQL("DROP TABLE IF EXISTS jobwork");
+		//onCreate(db);
+	}
+	
+	
+	private void copyDatabase() throws IOException {
+		SQLiteDatabase checkDB = null;
+		checkDB = SQLiteDatabase.openDatabase(DB_PATH + DB_NAME, null,
+				SQLiteDatabase.NO_LOCALIZED_COLLATORS);
+		
+		   InputStream myInput = crContext.getAssets().open(DB_NAME);
+		   String outFileName = DB_PATH + DB_NAME;
+		   OutputStream  myOutput = new FileOutputStream(outFileName);
+		  byte[] buffer = new byte[1024];
+		   int length;
+		   while ((length = myInput.read(buffer))>0) {
+			   myOutput.write(buffer, 0, length);
+		   }
+		   myOutput.flush();
+		   myOutput.close();
+		   myInput.close();
+	}	
+
+	//private void copydb(Activity act) {
+	private void copydb(Activity act) {
+		 
+		AssetManager am = act.getAssets();
+		File f = new File("/data/data/com.lee2day.jobwork/databases/jobwork_db.sqlite");
+ 
 		FileOutputStream fos = null;
 		BufferedOutputStream bos = null;
+ 
 		try {
-			InputStream is = manager.open("db/" + Constants.jobwork.db);
+ 
+			InputStream is = am.open("jobwork_db.sqlite");
 			BufferedInputStream bis = new BufferedInputStream(is);
-			if (file.exists()) {
-				file.delete();
-				file.createNewFile();
+ 
+			// 만약에 파일이 있다면 지우고 다시 생성
+			if (f.exists()) {
+				f.delete();
+				f.createNewFile();
 			}
-			fos = new FileOutputStream(file);
+			fos = new FileOutputStream(f);
 			bos = new BufferedOutputStream(fos);
+ 
 			int read = -1;
 			byte[] buffer = new byte[1024];
 			while ((read = bis.read(buffer, 0, 1024)) != -1) {
 				bos.write(buffer, 0, read);
 			}
 			bos.flush();
-			bos.close();
+ 
 			fos.close();
-			bis.close();
+			bos.close();
 			is.close();
+			bis.close();
+ 
 		} catch (IOException e) {
-			Log.e("ErrorMessage : ", e.getMessage());
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
-*/	
+	
+	public void InitDataBase() {
+
+		//final String ROOT_DIR = "/data/data/com.example.ax/databases/";
+
+		//final String DATABASE_NAME = DB이름;
+
+		File folder = new File(DB_PATH);
+
+		folder.mkdirs();
+
+		File outfile = new File(DB_PATH + DB_NAME);
+
+		//InputStream assetManager =  crContext.getAssets().open(DB_NAME); //crContext.getActivity().getAssets();
+
+		InputStream iStream = null;
+
+		try {
+
+			//iStream = InputStream.open("ax_www/" + DB_NAME, AssetManager.ACCESS_BUFFER);
+
+			long filesize = iStream.available();
+
+			byte[] tempdata = new byte[(int) filesize];
+
+			iStream.read(tempdata);
+
+			iStream.close();
+
+			outfile.createNewFile();
+
+			FileOutputStream fos = new FileOutputStream(outfile);
+
+			fos.write(tempdata);
+
+			fos.close();
+
+			Log.i("DB Copy", "success");
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+
+		}
+
+	}
+	public void openDataBase() throws SQLException {
+		String myPath = DB_PATH + DB_NAME;
+		sqlite = SQLiteDatabase.openDatabase(myPath, null,
+				SQLiteDatabase.NO_LOCALIZED_COLLATORS);
+	}	
 }
-
-
-
-
-
-
-class JobDBHelper extends SQLiteOpenHelper {
-	public JobDBHelper(Context context) {
-		super(context, "jobwork.db", null, 1);
-	}
-
-	public void onCreate(SQLiteDatabase db) {
-		db.execSQL("CREATE TABLE jobwork ( _id INTEGER PRIMARY KEY AUTOINCREMENT, "
-		        + "job_cd TEXT, job_nm TEXT, large_class TEXT, large_nm TEXT, middle_class TEXT, middle_nm TEXT, " 
-		        + "info_work VARCHAR, info_meth VARCHAR, info_view VARCHAR);");
-	}
-
-	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		db.execSQL("DROP TABLE IF EXISTS jobwork");
-		onCreate(db);
-	}
-}
-

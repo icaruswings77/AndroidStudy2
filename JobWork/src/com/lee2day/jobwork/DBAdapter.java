@@ -15,9 +15,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 //http://crlog.com/49
-//import android.content.Context;
-//import android.database.sqlite.SQLiteDatabase;
-//import android.database.sqlite.SQLiteOpenHelper;
 
 // http://vulpecula.tistory.com/31 Site 참조
 // .sqlite 파일에 테이블 추가 android_metadata local en_US
@@ -32,7 +29,7 @@ public class DBAdapter {
 	private DatabaseHelper DBHelper;
 	private SQLiteDatabase db;
 	private static String DB_PATH = "/data/data/com.lee2day.jobwork/databases/";
-	private static String DB_NAME = "jobwork_db.sqlite";
+	private static String DB_NAME = "job.db";
 
 
 	public DBAdapter(Context ctx) {
@@ -132,28 +129,10 @@ public class DBAdapter {
 		DBHelper.close();
 	}
 
-	public void openDataBase() throws SQLException {
-		String myPath = DB_PATH + DB_NAME;
-		// sqlite = SQLiteDatabase.openDatabase(myPath, null,
-		// SQLiteDatabase.NO_LOCALIZED_COLLATORS);
-		SQLiteDatabase.openDatabase(myPath, null,
-				SQLiteDatabase.NO_LOCALIZED_COLLATORS);
+	public SQLiteDatabase getReadableDatabase() {
+		// TODO Auto-generated method stub
+		db = DBHelper.getReadableDatabase();
+		return null;
 	}
-/*
-	private void copyDatabase() throws IOException {
-		InputStream myInput = context.getAssets().open(DB_NAME);
 
-		String outFileName = DB_PATH + DB_NAME;
-		OutputStream myOutput = new FileOutputStream(outFileName);
-
-		byte[] buffer = new byte[1024];
-		int length;
-		while ((length = myInput.read(buffer)) > 0) {
-			myOutput.write(buffer, 0, length);
-		}
-		myOutput.flush();
-		myOutput.close();
-		myInput.close();
-	}
-*/	
 }
