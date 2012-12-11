@@ -33,14 +33,14 @@ public final class R {
         public static final int button03=0x7f07001f;
         public static final int button04=0x7f070020;
         public static final int delete=0x7f070023;
+        public static final int edt_job_cd=0x7f070026;
+        public static final int edt_job_nm=0x7f070027;
         public static final int insert=0x7f070022;
         public static final int jobwork_main=0x7f070000;
-        public static final int list_title=0x7f070029;
-        public static final int menu_settings=0x7f07002a;
+        public static final int ls_01=0x7f07002a;
+        public static final int menu_settings=0x7f07002b;
         public static final int select=0x7f070025;
-        public static final int srch_lcls=0x7f070027;
-        public static final int srch_mcls=0x7f070028;
-        public static final int srch_title=0x7f070026;
+        public static final int srch_title=0x7f070029;
         public static final int textView1=0x7f07001c;
         public static final int textView2=0x7f070021;
         public static final int tv_field_qes=0x7f070017;
@@ -50,6 +50,7 @@ public final class R {
         public static final int tv_line04=0x7f07000b;
         public static final int tv_line05=0x7f07000e;
         public static final int tv_line06=0x7f070011;
+        public static final int tv_rslt=0x7f070028;
         public static final int tv_score_01=0x7f070003;
         public static final int tv_score_02=0x7f070006;
         public static final int tv_score_03=0x7f070009;
