@@ -13,15 +13,15 @@
     
     <!-- 진로코칭 메인화면 -->	
     <string name="tx_main_intro">청소년을 위한 진로 코칭</string>
-    <string name="bt_01">직업정보</string>
+    <string name="bt_01">직업전망</string>
     <string name="bt_02">적성검사</string>
     <string name="bt_03">인 터 뷰</string>
     <string name="bt_04">추천정보</string>
-    <string name="tx_01">서슬기님 작품</string>
-    <string name="tx_02">소태균님 작품</string>
+    <string name="tx_01">향후 대한민국 직업별 전망</string>
+    <string name="tx_02">직업 선택을 위한 적성검사</string>
     <string name="tx_03">하민호님 작품</string>
     <string name="tx_04">이상호님 작품</string>
-    <string name="tx_main_director">★ 총감독 : 이영기 차장님</string>
+    <string name="tx_main_director">★ 총감독 : 이영기 차장님 </string>
     
         
 </resources>

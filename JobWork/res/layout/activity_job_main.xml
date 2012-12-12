@@ -1,97 +1,86 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent" 
+    android:gravity="center">
 
-    <LinearLayout
+	<ImageView
+		android:id="@+id/jobwork_main"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:orientation="vertical" >
+        android:src="@drawable/jobwork_main" />
+    
+    <TableLayout
+    	android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >        	
+        
+        <TableRow>
+			<TextView
+            	android:layout_width="match_parent"
+            	android:layout_height="130dp"
+            	android:text="" />     
+         </TableRow>
 
-        <ImageView
-            android:id="@+id/jobwork_main"
-            android:layout_width="320dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="6dip"
-            android:src="@drawable/jobwork_main" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:text="@string/tx_main_intro"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-        
-        
-        <TableLayout
-        	android:layout_width="fill_parent"
-        	android:layout_height="fill_parent"
-        	android:layout_alignParentLeft="true"
-        	android:layout_alignParentTop="true"
-        	android:background="#f0f0f0">
-        	android:orientation="vertical" >
-        
-        	<TableRow>
-        		<Button
-            		android:id="@+id/button01"
-            		android:layout_width="fill_parent"
-            		android:layout_height="wrap_content"
+		<TableRow>
+        	<Button
+            	android:id="@+id/button01"
+            	android:layout_width="wrap_content"
+        		android:layout_height="40dp"
+        		android:textSize="7pt"
             		android:text="@string/bt_01" />
-    			<TextView        
-        			android:layout_width="wrap_content"
-        			android:layout_height="wrap_content"
-        			android:text="@string/tx_01" />          		
-
-        	</TableRow>
+    		<TextView        
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:textSize="5pt"
+        		android:text="@string/tx_01" />          		
+        </TableRow>
         
-        	<TableRow>
-        		<Button
-            		android:id="@+id/button02"
-            		android:layout_width="fill_parent"
-            		android:layout_height="wrap_content"
-        			android:text="@string/bt_02" />
-        		<TextView        
-        			android:layout_width="wrap_content"
-        			android:layout_height="wrap_content"
-        			android:text="@string/tx_02" />
-        	</TableRow>
+        <TableRow>
+        	<Button
+           		android:id="@+id/button02"
+           		android:layout_width="wrap_content"
+        		android:layout_height="40dp"
+        		android:textSize="7pt"
+        		android:text="@string/bt_02" />
+        	<TextView        
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:textSize="5pt"
+        		android:text="@string/tx_02" />
+        </TableRow>
 
-        	<TableRow>
-        		<Button
-            		android:id="@+id/button03"
-            		android:layout_width="fill_parent"
-            		android:layout_height="wrap_content"
-            		android:text="@string/bt_03" />
-        		<TextView        
-        			android:layout_width="wrap_content"
-        			android:layout_height="wrap_content"
-        			android:text="@string/tx_03" />
-
-        	</TableRow>
+        <TableRow>
+        	<Button
+           		android:id="@+id/button03"
+           		android:layout_width="wrap_content"
+        		android:layout_height="40dp"
+        		android:textSize="7pt"
+            	android:text="@string/bt_03" />
+        	<TextView        
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:textSize="5pt"
+        		android:text="@string/tx_03" />
+        </TableRow>
         
-        	<TableRow>
-        		<Button
-            		android:id="@+id/button04"
-            		android:layout_width="fill_parent"
-            		android:layout_height="wrap_content"
-        			android:text="@string/bt_04" />
-        		<TextView        
-        			android:layout_width="wrap_content"
-        			android:layout_height="wrap_content"
-        			android:text="@string/tx_04" />
-        	</TableRow>
+        <TableRow>
+        	<Button
+           		android:id="@+id/button04"
+           		android:layout_width="wrap_content"
+        		android:layout_height="40dp"
+        		android:textSize="7pt"
+        		android:text="@string/bt_04" />
+        	<TextView        
+        		android:layout_width="wrap_content"
+       			android:layout_height="wrap_content"
+       			android:textSize="5pt"
+       			android:text="@string/tx_04" />
+       	</TableRow>
         	
-        	<TextView
+       	<TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:text="@string/tx_main_director" />
-        	        	
-        </TableLayout>
-    
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:text="@string/tx_main_director" />                  
+    </TableLayout>        		
 
-</RelativeLayout>
+</FrameLayout>

@@ -5,7 +5,7 @@ public class AptitudeFunction {
 	public static String r_type_spcl = "★★★ 실재형 (Realistic) ★★★\n"
 			+ "○ 장난감이나 가구를 가지고 놀기를 좋아한다. \n" + "○ 무뚝뚝하고 말이 적은 편이다. \n"
 			+ "○ 축구, 농구 등의 운동을 잘한다. \n"
-			+ "○ 집 안 가檗 제품들에 관심이 많고 고장 나면 나서서 잘 고친다. \n"
+			+ "○ 집 안 가전 제품들에 관심이 많고 고장 나면 나서서 잘 고친다. \n"
 			+ "○ 조용히 앉아서 지내기보다 뛰어놀기를 좋아한다. \n" + " \n"
 			+ "※ 관련직업 : 제과제빵사, 기계기사, 방송기사, 전산기술자, 컴퓨터기사, 항공기관사";
 
@@ -48,9 +48,9 @@ public class AptitudeFunction {
 			+ "※ 관련직업 : 방송스크립터, 회계사, 컴퓨터게임프로그래머, 정보검색사, 공무원";
 
 	public String[] fieldQeustion;
-	
-	public AptitudeFunction() {	
-		
+
+	public AptitudeFunction() {
+
 		fieldQeustion = new String[39];
 
 		fieldQeustion[0] = "진로적성검사 체크 \n" + "(하단의 아무 버튼이나 누르면 시작합니다)";
@@ -126,31 +126,30 @@ public class AptitudeFunction {
 	public static String drawLine(int intScore) {
 		String textLine = "";
 
-		for (int i = 0; i < 6; i++) {
-			if (intScore < 51) {
-				textLine = "■■";
-			} else if (intScore > 50 && intScore < 56) {
-				textLine = "■■■■";
-			} else if (intScore > 55 && intScore < 61) {
-				textLine = "■■■■■";
-			} else if (intScore > 60 && intScore < 66) {
-				textLine = "■■■■■■";
-			} else if (intScore > 65 && intScore < 71) {
-				textLine = "■■■■■■■";
-			} else if (intScore > 70 && intScore < 76) {
-				textLine = "■■■■■■■■";
-			} else if (intScore > 75 && intScore < 81) {
-				textLine = "■■■■■■■■■";
-			} else if (intScore > 80 && intScore < 86) {
-				textLine = "■■■■■■■■■■";
-			} else if (intScore > 85 && intScore < 91) {
-				textLine = "■■■■■■■■■■■";
-			} else if (intScore > 90 && intScore < 96) {
-				textLine = "■■■■■■■■■■■■";
-			} else if (intScore > 95) {
-				textLine = "■■■■■■■■■■■■■";
-			}
+		if (intScore <= 50) {
+			textLine = "■■";
+		} else if (intScore > 50 && intScore <= 55) {
+			textLine = "■■■■";
+		} else if (intScore > 55 && intScore <= 60) {
+			textLine = "■■■■■";
+		} else if (intScore > 60 && intScore <= 65) {
+			textLine = "■■■■■■";
+		} else if (intScore > 65 && intScore <= 70) {
+			textLine = "■■■■■■■";
+		} else if (intScore > 70 && intScore <= 75) {
+			textLine = "■■■■■■■■";
+		} else if (intScore > 75 && intScore <= 80) {
+			textLine = "■■■■■■■■■";
+		} else if (intScore > 80 && intScore <= 85) {
+			textLine = "■■■■■■■■■■";
+		} else if (intScore > 85 && intScore <= 90) {
+			textLine = "■■■■■■■■■■■";
+		} else if (intScore > 90 && intScore <= 95) {
+			textLine = "■■■■■■■■■■■■";
+		} else if (intScore > 95) {
+			textLine = "■■■■■■■■■■■■■";
 		}
+
 		return textLine;
 	}
 

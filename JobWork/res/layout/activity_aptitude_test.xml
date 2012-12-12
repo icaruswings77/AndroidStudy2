@@ -44,7 +44,7 @@
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:layout_marginTop="6dip"
-            android:src="@drawable/jobwork_main" />
+            android:src="@drawable/jobwork_main_top" />
 
         <TextView
             android:id="@+id/tv_type"

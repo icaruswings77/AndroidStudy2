@@ -21,13 +21,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".JobInfoSrchActivity"
+            android:name="com.lee2day.jobwork.JobVisionActivity"
             android:label="@string/title_activity_job_info" >
         </activity>
-        <activity
-            android:name=".JobInfoRsltActivity"
-            android:label="@string/title_activity_job_info" >
-        </activity>
+
         <activity
             android:name=".AptitudeTestActivity"
             android:label="@string/title_activity_aptitude" >
